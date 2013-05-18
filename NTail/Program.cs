@@ -1,19 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
+using NTail.Validation;
+using Ninject;
 
-namespace CommandTools
+namespace NTail
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string fileName = args[0];
-            Console.WriteLine(fileName);
+            IKernel kernel = new StandardKernel(new NTailModule());
+            var validators = kernel.GetAll<IArgumentValidator>();
+            
+            foreach (var validator in validators)
+            {
+                try
+                {
+                    validator.Vaidate(args);
+                }
+                catch (Exception ex)
+                {
+                    if (ex is NoArgumentException || ex is FileNotFoundException)
+                    {
+                        return;
+                    }
 
+                    throw;
+                }
+            }
+            
+            string fileName = args[0];
             using (var reader = new StreamReader(
                 new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 )
@@ -29,9 +46,9 @@ namespace CommandTools
 
                     reader.BaseStream.Seek(lastMaxOffset, SeekOrigin.Begin);
 
-                    string line = string.Empty;
-                    while((line = reader.ReadLine()) != null)
-                        Console.WriteLine(line);
+                    int i;
+                    while((i = reader.Read()) > 0)
+                        Console.Write((char)i);
 
                     lastMaxOffset = reader.BaseStream.Position;
                 }
