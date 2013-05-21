@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NTail.Validation;
+﻿using NTail.Validation;
 using Ninject.Modules;
 
 namespace NTail
@@ -13,6 +9,7 @@ namespace NTail
         {
             Bind<IArgumentValidator>().To<ArgumentMustBeProvidedValidator>();
             Bind<IArgumentValidator>().To<FileMustExistValidator>();
+            Bind<IConsoleWriter>().To<ConsoleWriter>();
         }
     }
 }

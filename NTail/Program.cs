@@ -29,7 +29,9 @@ namespace NTail
                     throw;
                 }
             }
-            
+
+            var writer = kernel.Get<IConsoleWriter>();
+
             string fileName = args[0];
             using (var reader = new StreamReader(
                 new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -46,9 +48,9 @@ namespace NTail
 
                     reader.BaseStream.Seek(lastMaxOffset, SeekOrigin.Begin);
 
-                    int i;
-                    while((i = reader.Read()) > 0)
-                        Console.Write((char)i);
+                    string line;
+                    while((line = reader.ReadLine()) != null)
+                        writer.WriteLine(line);
 
                     lastMaxOffset = reader.BaseStream.Position;
                 }
