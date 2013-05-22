@@ -8,12 +8,24 @@ namespace NTail
         public void WriteLine(string line)
         {
             if (line.Contains("WARN", StringComparison.OrdinalIgnoreCase))
+            {
+                var colour = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.Magenta;
-            else if (line.Contains("ERROR", StringComparison.OrdinalIgnoreCase))
+                Console.WriteLine(line);
+                Console.ForegroundColor = colour;
+                return;
+            } 
+            
+            if (line.Contains("ERROR", StringComparison.OrdinalIgnoreCase))
+            {
+                var colour = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(line);
+                Console.ForegroundColor = colour;
+                return;
+            }
             
             Console.WriteLine(line);
-            Console.ResetColor();
         }
     }
 }
