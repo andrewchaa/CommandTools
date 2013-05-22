@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading;
 
 namespace NTail
@@ -6,10 +7,12 @@ namespace NTail
     public class Tailer : ITailer
     {
         private readonly IConsoleWriter _consoleWriter;
+        private readonly ITailState _tailState;
 
-        public Tailer(IConsoleWriter consoleWriter)
+        public Tailer(IConsoleWriter consoleWriter, ITailState tailState)
         {
             _consoleWriter = consoleWriter;
+            _tailState = tailState;
         }
 
         public void Tail(string fileName)
@@ -27,9 +30,12 @@ namespace NTail
 
                     reader.BaseStream.Seek(lastMaxOffset, SeekOrigin.Begin);
 
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                        _consoleWriter.WriteLine(line);
+                    if (!_tailState.IsPaused)
+                    {
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                            _consoleWriter.WriteLine(line);
+                    }
 
                     lastMaxOffset = reader.BaseStream.Position;
                 }

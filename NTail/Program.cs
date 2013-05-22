@@ -1,6 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using NTail.Validation;
 using Ninject;
 
@@ -16,8 +17,23 @@ namespace NTail
             if (validators.Any(v => !v.Vaidate(args)))
                 return;
 
+            var state = kernel.Get<ITailState>();
+            var keyHandler = kernel.Get<IKeyHandler>();
+            Task.Factory.StartNew(keyHandler.Handle);
+
             var tailer = kernel.Get<ITailer>();
             tailer.Tail(args[0]);
         }
+
+    }
+
+    public interface ITailState
+    {
+        bool IsPaused { get; set; }
+    }
+
+    public class TailState : ITailState
+    {
+        public bool IsPaused { get; set; }
     }
 }

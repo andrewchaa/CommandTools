@@ -11,6 +11,8 @@ namespace NTail
             Bind<IArgumentValidator>().To<FileMustExistValidator>();
             Bind<IConsoleWriter>().To<ConsoleWriter>();
             Bind<ITailer>().To<Tailer>();
+            Bind<IKeyHandler>().To<KeyHandler>();
+            Bind<ITailState>().To<TailState>().InSingletonScope();
         }
     }
 }

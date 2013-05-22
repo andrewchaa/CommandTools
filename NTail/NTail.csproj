@@ -47,7 +47,9 @@
     <Compile Include="ConsoleWriter.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="IConsoleWriter.cs" />
+    <Compile Include="IKeyHandler.cs" />
     <Compile Include="ITailer.cs" />
+    <Compile Include="KeyHandler.cs" />
     <Compile Include="Tailer.cs" />
     <Compile Include="Validation\ArgumentMustBeProvidedValidator.cs" />
     <Compile Include="Validation\FileMustExistValidator.cs" />
