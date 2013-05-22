@@ -51,8 +51,8 @@
 	
 	<summary>
 		<codepage>1252</codepage>
-		<title>Installation Database</title>
-		<subject>CommandTools</subject>
+		<title>##ID_STRING5##</title>
+		<subject>##ID_STRING6##</subject>
 		<author>##ID_STRING2##</author>
 		<keywords>Installer,MSI,Database</keywords>
 		<comments>Contact:  Your local administrator</comments>
@@ -341,7 +341,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{7B128C4F-D8D0-4D98-BF3E-EA551148673B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NTail.Primary_output</td><td>{9C433EDE-EF4C-420B-A048-5A7B6ED8E4F4}</td><td>INSTALLDIR</td><td>2</td><td/><td>ntail.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NTail.Primary_output</td><td>{57C2B1F9-4046-47DD-AEE6-4A0B83EF4D24}</td><td>INSTALLDIR</td><td>2</td><td/><td>ntail.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1132,7 +1132,7 @@
 		<row><td>ALLUSERSPROFILE</td><td>TARGETDIR</td><td>.:ALLUSE~1|All Users</td><td/><td>0</td><td/></row>
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
-		<row><td>COMMANDTOOLS</td><td>HUDDLE</td><td>COMMAN~1|CommandTools</td><td/><td>0</td><td/></row>
+		<row><td>COMMANDTOOLS</td><td>HUDDLE</td><td>NTail</td><td/><td>0</td><td/></row>
 		<row><td>CONSOLETOOLS</td><td>HUDDLE</td><td>CONSOL~1|ConsoleTools</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
@@ -1876,7 +1876,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>ntail.primary_output</td><td>NTail.Primary_output</td><td>NTail.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;NTail&gt;|Built</td><td>3</td><td/></row>
+		<row><td>ntail.primary_output</td><td>NTail.Primary_output</td><td>NTail.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;NTail1&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2135,7 +2135,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_DA148449_4F5A_4223_AAD1_E7F3B5CBB087_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NTail.Primary_output</td><td/><td/><td>_F5B79F40_D6DB_45CD_9E95_C4C79795D4A8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NTail.Primary_output</td><td/><td/><td>_45956D18_E1A3_4C45_AC91_519790CC8958_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2453,6 +2453,7 @@
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
 		<row><td>NTail</td><td>NTail\NTail.csproj</td><td/><td>2</td></row>
+		<row><td>NTail1</td><td>src\NTail.csproj</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
@@ -3864,16 +3865,19 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1298032976</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1298032976</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1298032976</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Huddle.com</td><td>0</td><td/><td>-1298022736</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>https://github.com/andrewchaa/NTail</td><td>0</td><td/><td>-1298037676</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Huddle</td><td>0</td><td/><td>-1298022736</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>=Path</td><td>0</td><td/><td>-1298013743</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>-=Path</td><td>0</td><td/><td>-1298070380</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>[~];[INSTALLDIR]</td><td>0</td><td/><td>-1298048527</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>NTail</td><td>0</td><td/><td>-1298031692</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>NTail</td><td>0</td><td/><td>-1298021452</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1298032976</td></row>
 	</table>
 
 	<table name="ISSwidtagProperty">
 		<col key="yes" def="s72">Name</col>
 		<col def="s0">Value</col>
+		<row><td>SfwCreatorName</td><td>Andrew Chaa</td></row>
 		<row><td>UniqueId</td><td>D49FDE17-08F3-4DE4-B757-31CCE459642E</td></row>
 	</table>
 
@@ -4108,7 +4112,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{87E542B6-D151-4D8F-9BBB-C24AADB36926}</td></row>
 		<row><td>ISUSSignature</td><td>{393DEB5E-13B6-4F69-92D9-913F69A07165}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewSetupDesign,viewAppFiles,viewFeatureFiles,viewObjects,viewDependencies,viewCE,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewSetupDesign,viewAppFiles,viewFeatureFiles,viewObjects,viewDependencies,viewCE,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables,viewISToday,viewAppV,viewSetupTypes,viewUpgradePaths,viewUpdateService,viewVRoots,viewSQLServer,viewComponentServices,viewUI,viewBillboards,viewTextMessages,viewSystemSearch,viewRelease,viewDesignPatches</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4481,7 +4485,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{DFDAAA71-FAA3-46B2-9FB6-2CF4716EF949}</td><td/></row>
-		<row><td>ProductName</td><td>CommandTools</td><td/></row>
+		<row><td>ProductName</td><td>NTail</td><td/></row>
 		<row><td>ProductVersion</td><td>0.90.0000</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>

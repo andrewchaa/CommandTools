@@ -1,25 +1,15 @@
-Command tools
+NTail
 =============
 
-It's a collection of handy command tools, I use day to day.
+C# implementation of Linux' tail.
 
-
-* Ntail
-
-
-NTail
--------
-
-Linux tail clone, written in C#. 
-
-A few features it has over tail are
+A few added features are
 
 * colour-code warning and error messages to catch the reader's attention. Warning is in magenta and error in red.
+* CTRL + N: New. Clear the console screen
+* CTRL + M: Mark. The text will be in a different background colour, so that it's easy for you to spot the changes you are interested. One more CTRL + M will unmark the text.
+* SPACE: Pause. It will pause text ouput. One more SPACE will unpause it.
 
-A few features that are going to be added are
-
-*
-* clear: you can clear the screen so that you can new file change clearly
-* a few more, probably
+I would welcome any feedback or suggestiongs!
 
 

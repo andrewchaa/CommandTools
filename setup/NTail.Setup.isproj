@@ -28,10 +28,9 @@
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
 	<ItemGroup>
-		<ProjectReference Include="..\NTail\NTail.csproj">
-			<Name>NTail</Name>
+		<ProjectReference Include="..\src\NTail.csproj">
+			<Name>NTail1</Name>
 			<Project>{38098081-2D4C-4268-8169-0583242735BA}</Project>
 		</ProjectReference>
 	</ItemGroup>
-
-	</Project>
+</Project>

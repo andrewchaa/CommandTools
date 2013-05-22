@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTail", "NTail\NTail.csproj", "{38098081-2D4C-4268-8169-0583242735BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTail", "src\NTail.csproj", "{38098081-2D4C-4268-8169-0583242735BA}"
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Installation", "Installation\Installation.isproj", "{00CA5C37-9F32-41C8-ADEC-9B8AC80B076B}"
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "NTail.Setup", "setup\NTail.Setup.isproj", "{00CA5C37-9F32-41C8-ADEC-9B8AC80B076B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{38098081-2D4C-4268-8169-0583242735BA} = {38098081-2D4C-4268-8169-0583242735BA}
 	EndProjectSection
