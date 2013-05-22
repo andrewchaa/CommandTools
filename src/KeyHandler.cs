@@ -24,10 +24,13 @@ namespace NTail
                 if (input.Key == ConsoleKey.Spacebar)
                 {
                     _tailState.IsPaused = !_tailState.IsPaused;
-                    
+
                     var colour = Console.ForegroundColor;
-                    Console.ForegroundColor  = ConsoleColor.Green;
-                    Console.WriteLine("\r\n      --- Paused ---\r\n");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    if (_tailState.IsPaused)
+                        Console.WriteLine("\r\n      --- Paused ---\r\n");
+                    else
+                        Console.WriteLine("\r\n      --- Tailing ... ---\r\n");
                     Console.ForegroundColor = colour;
                 }
 
