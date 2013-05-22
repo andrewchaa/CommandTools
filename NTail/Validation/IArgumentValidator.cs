@@ -2,6 +2,6 @@
 {
     public interface IArgumentValidator
     {
-        void Vaidate(string[] args);
+        bool Vaidate(string[] args);
     }
 }

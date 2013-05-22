@@ -10,6 +10,7 @@ namespace NTail
             Bind<IArgumentValidator>().To<ArgumentMustBeProvidedValidator>();
             Bind<IArgumentValidator>().To<FileMustExistValidator>();
             Bind<IConsoleWriter>().To<ConsoleWriter>();
+            Bind<ITailer>().To<Tailer>();
         }
     }
 }
