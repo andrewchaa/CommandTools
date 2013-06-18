@@ -11,6 +11,7 @@ namespace NTail.Validation
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\r\nUsage\r\n");
                 Console.WriteLine("ntail example.log");
+                Console.WriteLine("ntail example.log \"your keyword to highlight\"\r\n");
                 Console.WriteLine("SPACE to pause");
                 Console.WriteLine("CTRL + N to clear the console");
                 Console.WriteLine("CTRL + M to mark the following output");

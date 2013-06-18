@@ -44,25 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleWriter.cs" />
+    <Compile Include="Ports\ErrorHighlighter.cs" />
+    <Compile Include="Ports\PlainWriter.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
-    <Compile Include="IConsoleWriter.cs" />
-    <Compile Include="IKeyHandler.cs" />
-    <Compile Include="ITailer.cs" />
-    <Compile Include="ITailState.cs" />
-    <Compile Include="KeyHandler.cs" />
-    <Compile Include="Tailer.cs" />
-    <Compile Include="TailState.cs" />
+    <Compile Include="Ports\IHighlighter.cs" />
+    <Compile Include="Ports\IKeyHandler.cs" />
+    <Compile Include="Domain\ITailer.cs" />
+    <Compile Include="Domain\ITailState.cs" />
+    <Compile Include="Ports\KeyHandler.cs" />
+    <Compile Include="Domain\Tailer.cs" />
+    <Compile Include="Domain\TailState.cs" />
+    <Compile Include="Ports\KeywordHighlighter.cs" />
+    <Compile Include="Ports\WarnHighlighter.cs" />
     <Compile Include="Validation\ArgumentMustBeProvidedValidator.cs" />
     <Compile Include="Validation\FileMustExistValidator.cs" />
     <Compile Include="Validation\IArgumentValidator.cs" />
-    <Compile Include="NTailModule.cs" />
+    <Compile Include="Infrastructure\NTailModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

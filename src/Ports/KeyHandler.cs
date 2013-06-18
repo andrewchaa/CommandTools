@@ -1,6 +1,7 @@
 ﻿using System;
+using NTail.Domain;
 
-namespace NTail
+namespace NTail.Ports
 {
     public class KeyHandler : IKeyHandler
     {

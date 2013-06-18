@@ -1,17 +1,17 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading;
+using NTail.Ports;
 
-namespace NTail
+namespace NTail.Domain
 {
     public class Tailer : ITailer
     {
-        private readonly IConsoleWriter _consoleWriter;
+        private readonly IHighlighter _highlighter;
         private readonly ITailState _tailState;
 
-        public Tailer(IConsoleWriter consoleWriter, ITailState tailState)
+        public Tailer(IHighlighter highlighter, ITailState tailState)
         {
-            _consoleWriter = consoleWriter;
+            _highlighter = highlighter;
             _tailState = tailState;
         }
 
@@ -34,7 +34,7 @@ namespace NTail
                     {
                         string line;
                         while ((line = reader.ReadLine()) != null)
-                            _consoleWriter.WriteLine(line);
+                            _highlighter.WriteLine(line);
                     }
 
                     lastMaxOffset = reader.BaseStream.Position;

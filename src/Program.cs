@@ -1,5 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using NTail.Domain;
+using NTail.Infrastructure;
+using NTail.Ports;
 using NTail.Validation;
 using Ninject;
 
@@ -18,8 +21,14 @@ namespace NTail
             var keyHandler = kernel.Get<IKeyHandler>();
             Task.Factory.StartNew(keyHandler.Handle);
 
-            var tailer = kernel.Get<ITailer>();
+
+            var tailState = kernel.Get<ITailState>();
+            
+            var highlighter = new ErrorHighlighter(new WarnHighlighter(new PlainWriter()));
+            var tailer = args.Length == 1 ? new Tailer(highlighter, tailState) : 
+                                 new Tailer(new KeywordHighlighter(highlighter, args[1]), tailState);
             tailer.Tail(args[0]);
+
         }
 
     }

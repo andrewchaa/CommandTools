@@ -1,7 +1,9 @@
-﻿using NTail.Validation;
+﻿using NTail.Domain;
+using NTail.Ports;
+using NTail.Validation;
 using Ninject.Modules;
 
-namespace NTail
+namespace NTail.Infrastructure
 {
     public class NTailModule : NinjectModule
     {
@@ -9,9 +11,8 @@ namespace NTail
         {
             Bind<IArgumentValidator>().To<ArgumentMustBeProvidedValidator>();
             Bind<IArgumentValidator>().To<FileMustExistValidator>();
-            Bind<IConsoleWriter>().To<ConsoleWriter>();
-            Bind<ITailer>().To<Tailer>();
-            Bind<IKeyHandler>().To<KeyHandler>();
+            Bind<ITailer>().To<Tailer>().InSingletonScope();
+            Bind<IKeyHandler>().To<KeyHandler>().InSingletonScope();
             Bind<ITailState>().To<TailState>().InSingletonScope();
         }
     }

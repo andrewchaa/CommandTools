@@ -1,4 +1,4 @@
-﻿namespace NTail
+﻿namespace NTail.Ports
 {
     public interface IKeyHandler
     {

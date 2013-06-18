@@ -1,4 +1,4 @@
-﻿namespace NTail
+﻿namespace NTail.Domain
 {
     public interface ITailState
     {
