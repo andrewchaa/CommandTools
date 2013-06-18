@@ -10,7 +10,7 @@ Usage
     ntail example.log "your keyword to highlight"
 
 
-* It highlights a line that contains "WARN" or "ERROR". 
+* It highlights the lines that contains "WARN" or "ERROR". 
 * If you provide keyword, it will highlight the line that contains your keyword
 
 Keyboard shortcuts
