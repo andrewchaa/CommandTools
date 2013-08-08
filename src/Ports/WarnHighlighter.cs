@@ -14,7 +14,7 @@ namespace NTail.Ports
 
         public void WriteLine(string line)
         {
-            if (line.Contains("WARN", StringComparison.OrdinalIgnoreCase))
+            if (line.Contains(" WARN "))
             {
                 var colour = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.Magenta;

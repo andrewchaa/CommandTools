@@ -14,7 +14,7 @@ namespace NTail.Ports
 
         public void WriteLine(string line)
         {
-            if (line.Contains("ERROR", StringComparison.OrdinalIgnoreCase))
+            if (line.Contains(" ERROR "))
             {
                 var colour = Console.ForegroundColor;
                 Console.ForegroundColor = ConsoleColor.DarkRed;
